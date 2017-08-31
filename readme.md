@@ -34,7 +34,7 @@ For more imformation about JRebel Remoting see the official documentation: [http
 !!!Before you start - make sure that Docker is installed on your machine!!!
 
 ```
-      git clone https://github.com/antonarhipov/petclinic-docker-jrebel.git
+      git clone --depth 1 https://github.com/antonarhipov/petclinic-docker-jrebel.git
       cd petclinic-docker-jrebel
       ./mvnw -DskipTests clean package
       docker-compose up
