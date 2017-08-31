@@ -1,0 +1,12 @@
+petclinic:
+  image: tomcat:8.0
+  ports: 
+    - "8080:8080"
+  volumes:
+    - "./jrebel/jrebel.jar:/jrebel.jar"
+    - "./jrebel/lib/libjrebel64.so:/libjrebel64.so"
+    - "./target/petclinic.war:/usr/local/tomcat/webapps/petclinic.war"
+    - "~/.jrebel:/.jrebel"
+  environment:
+    - "JAVA_OPTS=-agentpath:/libjrebel64.so -Drebel.remoting_plugin=true"
+
